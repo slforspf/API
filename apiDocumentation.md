@@ -181,6 +181,7 @@
 
 **Example Response**:
 
+[
    {
        "timestamp": 1697095081.201,
        "trade_id": "65279da9ad2261e56b2713ba",
@@ -189,6 +190,8 @@
        "base_volume": 10.227074,
        "quote_volume": 502.33449457477
    }
+]
+
 
 
 **Description**:
