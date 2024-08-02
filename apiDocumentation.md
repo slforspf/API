@@ -180,7 +180,7 @@
 **Example Query**: `v1/spot/trades?pair=BTCUSDT`
 
 **Example Response**:
-
+```json
 [
    {
        "timestamp": 1697095081.201,
@@ -191,7 +191,7 @@
        "quote_volume": 502.33449457477
    }
 ]
-
+```
 
 
 **Description**:
