@@ -59,12 +59,13 @@
 | `highest_price_24h`     | decimal | Highest price of base currency based on given quote currency in the last 24-hrs                   |
 | `lowest_price_24h`      | decimal | Lowest price of base currency based on given quote currency in the last 24-hrs                    |
 
-##Crypto Assets Details
-#Endpoint: v1/wallet/assets
 
-#Method: GET
+#Crypto Assets Details
+##Endpoint: v1/wallet/assets
 
-#Example Response:
+**Method**: GET
+
+**Example Response**:
 
 {
    "USDT": {
