@@ -46,11 +46,11 @@ Here is the markdown file for GitHub with the table sections formatted as code:
        "highest_bid": 750636034.388173
    }
 ]
-```
+
 
 **Description**:
 
-```
+
 | Name                    | Type    | Description                                                                                       |
 |-------------------------|---------|---------------------------------------------------------------------------------------------------|
 | `trading_pairs`         | string  | Identifier of a ticker with delimiter to separate base/quote, eg. BTC-USD (Price of BTC in USD)    |
@@ -113,7 +113,7 @@ Here is the markdown file for GitHub with the table sections formatted as code:
 **Method**: GET
 
 **Example Response**:
-```json
+json
 {
    "BNB_USDT": {
        "last_price": 2318714509.752429,
