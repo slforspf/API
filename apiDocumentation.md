@@ -1,3 +1,5 @@
+Here is the markdown file for GitHub with the table sections formatted as code:
+
 # Integration API Standards
 
 ## Endpoints
@@ -44,9 +46,11 @@
        "highest_bid": 750636034.388173
    }
 ]
+```
 
-#Description:
+**Description**:
 
+```
 | Name                    | Type    | Description                                                                                       |
 |-------------------------|---------|---------------------------------------------------------------------------------------------------|
 | `trading_pairs`         | string  | Identifier of a ticker with delimiter to separate base/quote, eg. BTC-USD (Price of BTC in USD)    |
@@ -59,14 +63,13 @@
 | `highest_price_24h`     | decimal | Highest price of base currency based on given quote currency in the last 24-hrs                   |
 | `lowest_price_24h`      | decimal | Lowest price of base currency based on given quote currency in the last 24-hrs                    |
 
+### Crypto Assets Details
 
-#Crypto Assets Details
-##Endpoint: v1/wallet/assets
+**Endpoint**: `v1/wallet/assets`
 
 **Method**: GET
 
 **Example Response**:
-
 {
    "USDT": {
        "name": "tether",
@@ -87,3 +90,120 @@
        "contractAddress": "0x3a3Ba980b92E63F9faFd27E821E461115140B84F"
    }
 }
+
+
+**Description**:
+
+
+| Name                | Type    | Description                                                        |
+|---------------------|---------|--------------------------------------------------------------------|
+| `name`              | string  | Full name of cryptocurrency                                        |
+| `unified_cryptoasset_id` | integer | Unique ID of cryptocurrency assigned                              |
+| `can_withdraw`      | boolean | Identifies whether withdrawals are enabled or disabled             |
+| `can_deposit`       | boolean | Identifies whether deposits are enabled or disabled                |
+| `contractAddress`   | string  | Contract address of the asset on each chain                        |
+| `min_withdraw`      | decimal | Single minimum withdrawal amount of a cryptocurrency               |
+| `max_withdraw`      | decimal | Single maximum withdrawal amount of a cryptocurrency               |
+
+
+### 24-Hour Price Change Statistics
+
+**Endpoint**: `v1/spot/ticker`
+
+**Method**: GET
+
+**Example Response**:
+```json
+{
+   "BNB_USDT": {
+       "last_price": 2318714509.752429,
+       "quote_volume": 285160.136,
+       "base_volume": 61610811.4505
+   },
+   "BTC_USDT": {
+       "last_price": 28207.51,
+       "quote_volume": 73848.12186,
+       "base_volume": 2092325338.516788
+   },
+   "BNB_BTC": {
+       "last_price": 0.00755,
+       "quote_volume": 31222.052,
+       "base_volume": 235.41468856
+   }
+}
+
+
+**Description**:
+
+
+| Name           | Type    | Description                                                |
+|----------------|---------|------------------------------------------------------------|
+| `last_price`   | decimal | Last transacted price of base currency based on quote currency |
+| `base_volume`  | decimal | 24-hour trading volume denoted in BASE currency            |
+| `quote_volume` | decimal | 24-hour trading volume denoted in QUOTE currency           |
+
+
+### Market Depth
+
+**Endpoint**: `v1/spot/orderbook`
+
+**Method**: GET
+
+**Example Query**: `v1/spot/orderbook?pair=BTCUSDT`
+
+**Example Response**:
+
+{
+   "timestamp": 1697519512669,
+   "bids": [
+       [30441.1716, 0.2]
+   ],
+   "asks": [
+       [25931.9848, 8.67]
+   ]
+}
+
+
+**Description**:
+
+
+| Name       | Type    | Description                                                      |
+|------------|---------|------------------------------------------------------------------|
+| `timestamp`| integer | Unix timestamp in milliseconds for when the last update occurred |
+| `bids`     | decimal | Array containing 2 elements: offer price and quantity for each bid order |
+| `asks`     | decimal | Array containing 2 elements: ask price and quantity for each ask order |
+
+
+### Recent Trades
+
+**Endpoint**: `v1/spot/trades`
+
+**Method**: GET
+
+**Example Query**: `v1/spot/trades?pair=BTCUSDT`
+
+**Example Response**:
+
+[
+   {
+       "timestamp": 1697095081.201,
+       "trade_id": "65279da9ad2261e56b2713ba",
+       "price": 49.118105,
+       "type": "sell",
+       "base_volume": 10.227074,
+       "quote_volume": 502.33449457477
+   }
+]
+
+
+**Description**:
+
+
+| Name          | Type    | Description                                                        |
+|---------------|---------|--------------------------------------------------------------------|
+| `trade_id`    | integer | Unique ID associated with the trade for the currency pair transaction |
+| `price`       | decimal | Last transacted price of base currency based on quote currency      |
+| `base_volume` | decimal | Transaction amount in BASE currency                                 |
+| `quote_volume`| decimal | Transaction amount in QUOTE currency                                |
+| `timestamp`   | integer | Unix timestamp in milliseconds for when the transaction occurred    |
+| `type`        | string  | Indicates whether the transaction originated as a buy or sell       |
