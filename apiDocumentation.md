@@ -32,18 +32,19 @@
 
 **Example Response**:
 
-   {
-       "trading_pairs": "BNB_USDT",
-       "last_price": 788881688.241272,
-       "base_volume": 285160.136,
-       "quote_volume": 61610811.4505,
-       "highest_price_24h": 218.8,
-       "lowest_price_24h": 213.6,
-       "price_change_percent_24h": 0.603,
-       "lowest_ask": 860337790.041287,
-       "highest_bid": 750636034.388173
-   }
-
+```json
+{
+    "trading_pairs": "BNB_USDT",
+    "last_price": 788881688.241272,
+    "base_volume": 285160.136,
+    "quote_volume": 61610811.4505,
+    "highest_price_24h": 218.8,
+    "lowest_price_24h": 213.6,
+    "price_change_percent_24h": 0.603,
+    "lowest_ask": 860337790.041287,
+    "highest_bid": 750636034.388173
+}
+```
 
 **Description**:
 
@@ -67,6 +68,7 @@
 **Method**: GET
 
 **Example Response**:
+```json
 {
    "USDT": {
        "name": "tether",
@@ -87,7 +89,7 @@
        "contractAddress": "0x3a3Ba980b92E63F9faFd27E821E461115140B84F"
    }
 }
-
+```
 
 **Description**:
 
@@ -110,7 +112,7 @@
 **Method**: GET
 
 **Example Response**:
-
+```json
 {
    "BNB_USDT": {
        "last_price": 2318714509.752429,
@@ -128,7 +130,7 @@
        "base_volume": 235.41468856
    }
 }
-
+```
 
 **Description**:
 
@@ -149,7 +151,7 @@
 **Example Query**: `v1/spot/orderbook?pair=BTCUSDT`
 
 **Example Response**:
-
+```json
 {
    "timestamp": 1697519512669,
    "bids": [
@@ -159,7 +161,7 @@
        [25931.9848, 8.67]
    ]
 }
-
+```
 
 **Description**:
 
