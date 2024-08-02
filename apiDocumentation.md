@@ -31,7 +31,6 @@
 **Method**: GET
 
 **Example Response**:
-```json
 [
    {
        "trading_pairs": "BNB_USDT",
