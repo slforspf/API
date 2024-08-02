@@ -1,5 +1,3 @@
-Here is the markdown file for GitHub with the table sections formatted as code:
-
 # Integration API Standards
 
 ## Endpoints
@@ -33,7 +31,7 @@ Here is the markdown file for GitHub with the table sections formatted as code:
 **Method**: GET
 
 **Example Response**:
-[
+
    {
        "trading_pairs": "BNB_USDT",
        "last_price": 788881688.241272,
@@ -45,7 +43,6 @@ Here is the markdown file for GitHub with the table sections formatted as code:
        "lowest_ask": 860337790.041287,
        "highest_bid": 750636034.388173
    }
-]
 
 
 **Description**:
@@ -113,7 +110,7 @@ Here is the markdown file for GitHub with the table sections formatted as code:
 **Method**: GET
 
 **Example Response**:
-json
+
 {
    "BNB_USDT": {
        "last_price": 2318714509.752429,
@@ -184,7 +181,6 @@ json
 
 **Example Response**:
 
-[
    {
        "timestamp": 1697095081.201,
        "trade_id": "65279da9ad2261e56b2713ba",
@@ -193,7 +189,6 @@ json
        "base_volume": 10.227074,
        "quote_volume": 502.33449457477
    }
-]
 
 
 **Description**:
